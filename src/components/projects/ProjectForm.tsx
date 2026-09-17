@@ -29,6 +29,7 @@ interface ProjectFormProps {
   onOpenChange: (open: boolean) => void;
   initialProject?: Project | null;
   existingProjects: Project[];
+  // Vercel cache buster comment
   onSave: (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>) => Promise<{ success: boolean; error?: string }>;
 }
 

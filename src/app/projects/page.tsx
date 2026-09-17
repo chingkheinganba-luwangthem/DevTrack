@@ -71,12 +71,13 @@ export default function ProjectsPage() {
     });
   }, [projects, activeTab, searchQuery]);
 
-  const handleSaveProject = async (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>) => {
+  const handleSaveProject = async (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>): Promise<{ success: boolean; error?: string }> => {
     if (editingProject) {
       await updateProject(editingProject.id, data);
       return { success: true };
     } else {
-      return await addProject(data);
+      const result = await addProject(data);
+      return result || { success: false, error: 'Unknown error' };
     }
   };
 
