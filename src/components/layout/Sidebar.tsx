@@ -33,7 +33,7 @@ export const Sidebar: React.FC = () => {
       <div className="p-6 border-b border-border/60">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 relative rounded-xl overflow-hidden shadow-sm shadow-primary/30 group-hover:scale-105 transition-transform duration-200 bg-white">
-            <Image src="/DevTrackLogo.png" alt="DevTrack Logo" fill className="object-contain p-1" />
+            <img src="/DevTrackLogo.png" alt="DevTrack Logo" className="w-full h-full object-contain p-1" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
