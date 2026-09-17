@@ -41,7 +41,7 @@ export const MobileNav: React.FC = () => {
         <SheetHeader className="p-6 border-b border-border/60 text-left">
           <SheetTitle className="flex items-center gap-3">
             <div className="w-9 h-9 relative rounded-xl overflow-hidden bg-white shadow-sm">
-              <Image src="/logo.png" alt="DevTrack Logo" fill className="object-contain p-1" />
+              <Image src="/DevTrackLogo.png" alt="DevTrack Logo" fill className="object-contain p-1" />
             </div>
             <div>
               <span className="text-lg font-bold tracking-tight text-foreground font-sans">
