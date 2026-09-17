@@ -13,6 +13,7 @@ import {
   Zap,
   HardDrive,
 } from 'lucide-react';
+import Image from 'next/image';
 
 const NAV_ITEMS = [
   { label: 'Dashboard', href: '/', icon: LayoutDashboard },
@@ -31,8 +32,8 @@ export const Sidebar: React.FC = () => {
       {/* Brand Header */}
       <div className="p-6 border-b border-border/60">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-sm shadow-primary/30 group-hover:scale-105 transition-transform duration-200">
-            <Zap className="w-5 h-5 fill-current" />
+          <div className="w-10 h-10 relative rounded-xl overflow-hidden shadow-sm shadow-primary/30 group-hover:scale-105 transition-transform duration-200 bg-white">
+            <Image src="/logo.png" alt="DevTrack Logo" fill className="object-contain p-1" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">

@@ -15,6 +15,7 @@ import {
   HardDrive,
 } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 const NAV_ITEMS = [
@@ -39,8 +40,8 @@ export const MobileNav: React.FC = () => {
       <SheetContent side="left" className="w-72 p-0 flex flex-col bg-card border-border">
         <SheetHeader className="p-6 border-b border-border/60 text-left">
           <SheetTitle className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-sm">
-              <Zap className="w-5 h-5 fill-current" />
+            <div className="w-9 h-9 relative rounded-xl overflow-hidden bg-white shadow-sm">
+              <Image src="/logo.png" alt="DevTrack Logo" fill className="object-contain p-1" />
             </div>
             <div>
               <span className="text-lg font-bold tracking-tight text-foreground font-sans">
