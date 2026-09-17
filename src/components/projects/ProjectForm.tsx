@@ -29,7 +29,7 @@ interface ProjectFormProps {
   onOpenChange: (open: boolean) => void;
   initialProject?: Project | null;
   existingProjects: Project[];
-  onSave: (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>) => { success: boolean; error?: string };
+  onSave: (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>) => Promise<{ success: boolean; error?: string }>;
 }
 
 export const ProjectForm: React.FC<ProjectFormProps> = ({
@@ -102,11 +102,11 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
-    const result = onSave({
+    const result = await onSave({
       projectId: projectId.trim().toUpperCase(),
       projectName: projectName.trim(),
       description: description.trim(),

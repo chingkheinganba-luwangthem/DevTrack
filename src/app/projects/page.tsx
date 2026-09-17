@@ -71,12 +71,12 @@ export default function ProjectsPage() {
     });
   }, [projects, activeTab, searchQuery]);
 
-  const handleSaveProject = (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>) => {
+  const handleSaveProject = async (data: Omit<Project, 'id' | 'createdAt' | 'updatedAt' | 'archived'>) => {
     if (editingProject) {
-      updateProject(editingProject.id, data);
+      await updateProject(editingProject.id, data);
       return { success: true };
     } else {
-      return addProject(data);
+      return await addProject(data);
     }
   };
 
